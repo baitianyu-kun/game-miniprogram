@@ -65,6 +65,16 @@ public class WxMaUserController {
         return JsonUtils.toJson(userInfo);
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "hello world";
+    }
+
+    @GetMapping("/testController")
+    public String testController(){
+        return "hello world test controller";
+    }
+
     /**
      * <pre>
      * 获取用户绑定手机号信息
