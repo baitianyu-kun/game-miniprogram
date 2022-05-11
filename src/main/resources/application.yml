@@ -11,3 +11,10 @@ wx:
           token: #微信小程序消息服务器配置的token
           aesKey: #微信小程序消息服务器配置的EncodingAESKey
           msgDataFormat: JSON
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/rural_recruitment?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
