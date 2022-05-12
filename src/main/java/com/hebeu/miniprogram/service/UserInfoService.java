@@ -11,4 +11,6 @@ public interface UserInfoService {
 
     int insertUserPhone(int userId,String phoneNumber);
 
+    String getUserType(int userId);
+
 }

@@ -6,6 +6,8 @@ import com.hebeu.miniprogram.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
 
@@ -29,6 +31,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public int insertUserPhone(int userId, String phoneNumber) {
         return userInfoMapper.insertUserPhone(userId,phoneNumber);
+    }
+
+    @Override
+    public String getUserType(int userId) {
+        return userInfoMapper.getUserType(userId);
     }
 
 

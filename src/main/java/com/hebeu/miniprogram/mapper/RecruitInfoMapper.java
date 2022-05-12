@@ -29,7 +29,7 @@ public interface RecruitInfoMapper {
             "from recruit_info ri\n" +
             "         left join enterprise_info ei on ri.enterprise_id = ei.enterprise_id\n";
 
-    @Options(useGeneratedKeys = true, keyProperty = "recruit_id")
+    @Options(useGeneratedKeys = true, keyProperty = "recruitId")
     @Insert("insert into recruit_info" +
             "(recruit_id,user_id, enterprise_id, recruit_type, " +
             "recruit_position, work_type, work_time," +
@@ -41,6 +41,27 @@ public interface RecruitInfoMapper {
             "#{workLocation},#{workPayment},#{workContent}," +
             "#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertRecruitInfo(RecruitInfo recruitInfo);
+
+    //修改招聘信息不可修改recruit id，user id和enterprise id
+    @Update("update recruit_info set" +
+            "recruit_type=#{recruitType}," +
+            "recruit_position=#{recruitPosition}," +
+            "work_type=#{workType}," +
+            "work_time=#{workTime}," +
+            "work_location=#{workLocation}," +
+            "work_payment=#{workPayment}," +
+            "work_content=#{workContent}," +
+            "work_period=#{workPeriod}," +
+            "contact_info=#{contactInfo}," +
+            "release_time=#{releaseTime}, where recruit_id=#{recruitId}")
+    int updateRecruitInfo(RecruitInfo recruitInfo);
+
+    @Delete("delete ri,ei\n" +
+            "from recruit_info ri\n" +
+            "left join enterprise_info ei " +
+            "on ri.enterprise_id = ei.enterprise_id\n" +
+            "where ri.recruit_id=#{recruitId}")
+    int deleteRecruitInfo(int recruitId);
 
     @Select(basicSelectSql)
     @Results(id = "recruitInfoResults", value = {
@@ -63,6 +84,9 @@ public interface RecruitInfoMapper {
             @Result(column = "enterprise_contact_info", property = "enterpriseInfo.contactInfo")
     })
     List<RecruitInfo> searchAllRecruit();
+
+    @Select(basicSelectSql + "where recruit_id=#{recruitId}")
+    RecruitInfo searchRecruitByRecruitId(int recruitId);
 
     @Select(basicSelectSql + "where ei.enterprise_name like #{EnterpriseName}")
     @ResultMap(value = "recruitInfoResults")
@@ -96,4 +120,11 @@ public interface RecruitInfoMapper {
     @Select(basicSelectSql + "where UNIX_TIMESTAMP(ri.release_time)  >= UNIX_TIMESTAMP(#{beginTime})  and  UNIX_TIMESTAMP(ri.release_time)  <= UNIX_TIMESTAMP(#{endTime})")
     @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchRecruitByReleaseTime(String beginTime, String endTime);
+
+    // 根据用户id来找其发表过的所有招聘信息
+    @Select(basicSelectSql + "where ri.user_id = #{userId}")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByUserId(int userId);
+
+
 }

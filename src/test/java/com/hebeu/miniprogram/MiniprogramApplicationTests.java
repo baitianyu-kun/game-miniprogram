@@ -21,7 +21,8 @@ class MiniprogramApplicationTests {
     private RecruitInfoService recruitInfoService;
 
     @Test
-    void contextLoads() {
+    void TimeStampTest() {
+        System.out.println(new Timestamp(System.currentTimeMillis()));
     }
 
     @Test
@@ -36,7 +37,6 @@ class MiniprogramApplicationTests {
 
     @Test
     void recruitInfoServiceImplTest(){
-//        System.out.println(recruitInfoService.searchRecruitByEnterpriseName("%b%"));
         System.out.println(recruitInfoService.searchRecruitByReleaseTime("2015-01-01 13:50:42", "2023-02-06 00:00:00"));
     }
 
