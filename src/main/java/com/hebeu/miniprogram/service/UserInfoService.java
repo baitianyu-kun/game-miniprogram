@@ -9,4 +9,6 @@ public interface UserInfoService {
 
     UserInfo findUser(String openId);
 
+    int insertUserPhone(int userId,String phoneNumber);
+
 }

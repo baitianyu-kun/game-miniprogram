@@ -1,6 +1,8 @@
 package com.hebeu.miniprogram;
 
 import com.hebeu.miniprogram.entity.ExpectedJobInfo;
+import com.hebeu.miniprogram.entity.UserInfo;
+import com.hebeu.miniprogram.service.RecruitInfoService;
 import com.hebeu.miniprogram.service.UserInfoService;
 import com.hebeu.miniprogram.utils.SqlUtils;
 import org.junit.jupiter.api.Test;
@@ -15,6 +17,9 @@ class MiniprogramApplicationTests {
     @Autowired
     private UserInfoService userInfoService;
 
+    @Autowired
+    private RecruitInfoService recruitInfoService;
+
     @Test
     void contextLoads() {
     }
@@ -26,7 +31,12 @@ class MiniprogramApplicationTests {
 
     @Test
     void UserInfoServiceImplTest(){
-        userInfoService.findUser("23");
+        System.err.println(userInfoService.insertUserPhone(7, "15932366827"));
+    }
+
+    @Test
+    void recruitInfoServiceImplTest(){
+        System.out.println(recruitInfoService.searchRecruitByEnterpriseName("%b%"));
     }
 
 }

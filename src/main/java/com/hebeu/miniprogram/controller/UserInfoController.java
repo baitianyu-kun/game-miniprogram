@@ -11,6 +11,7 @@ import com.hebeu.miniprogram.service.UserInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
 import com.hebeu.miniprogram.utils.JsonUtils;
 import me.chanjar.weixin.common.error.WxErrorException;
+import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,16 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-public class WxMaUserController {
+public class UserInfoController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private final UserInfoService userInfoService;
+    private UserInfoService userInfoService;
 
-    public WxMaUserController(UserInfoService userInfoService) {
+    public void setUserInfoService(UserInfoService userInfoService) {
         this.userInfoService = userInfoService;
     }
-
 
     /**
      * 登陆接口
@@ -53,34 +53,52 @@ public class WxMaUserController {
     }
 
     /**
-     * 先访问这个接口，当用户不存在的时候再去注册
+     * 获取用户信息接口
      */
-    @GetMapping("/existinfo")
-    @WebLog(description = "existInfo")
-    public String existInfo(String openid) {
-        UserInfo userInfo = userInfoService.findUser(openid);
-        if (userInfo == null) {
-            return ServiceStatus.USER_NOT_EXIST;
-        } else {
-            return JsonUtils.toJson(userInfo);
+    @GetMapping("/info")
+    public String info(String appid, String openid,String userType, String sessionKey,
+                       String signature, String rawData, String encryptedData, String iv) {
+        UserInfo findUserInfo=userInfoService.findUser(openid);
+        if (findUserInfo!=null){
+            //是否为新用户
+            findUserInfo.setNew(false);
+            return JsonUtils.toJson(findUserInfo);
+        }else {
+            //不是新用户的话，解密用户信息
+            final WxMaService wxService = WxMaConfiguration.getMaService(appid);
+            if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
+                return ServiceStatus.USER_CHECK_FAILED;
+            }
+            WxMaUserInfo  tempUserInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
+            UserInfo newUserInfo=new UserInfo();
+            newUserInfo.setNew(true);
+            newUserInfo.setAppid(appid);
+            newUserInfo.setOpenId(openid);
+            newUserInfo.setAvatarUrl(tempUserInfo.getAvatarUrl());
+            newUserInfo.setCity(tempUserInfo.getCity());
+            newUserInfo.setCountry(tempUserInfo.getCountry());
+            newUserInfo.setGender(tempUserInfo.getGender());
+            newUserInfo.setLanguage(tempUserInfo.getLanguage());
+            newUserInfo.setNickName(tempUserInfo.getNickName());
+            newUserInfo.setUserType(userType);
+            newUserInfo.setProvince(tempUserInfo.getProvince());
+            userInfoService.insertUser(newUserInfo);
+            return JsonUtils.toJson(newUserInfo);
         }
     }
 
     /**
-     * 获取用户信息接口
+     * 用户添加手机号
      */
-    @GetMapping("/registerinfo")
-    public String info(String appid, String sessionKey,
-                       String signature, String rawData, String encryptedData, String iv) {
-        final WxMaService wxService = WxMaConfiguration.getMaService(appid);
-        // 用户信息校验
-        if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
-            return ServiceStatus.USER_CHECK_FAILED;
-        }
-        // 解密用户信息
-        WxMaUserInfo userInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
-        return JsonUtils.toJson(userInfo);
-    }
+    @GetMapping("/getphone")
+     public String getUserPhone(int userId,String phoneNumber){
+         if (userInfoService.insertUserPhone(userId,phoneNumber)!=0){
+             return ServiceStatus.UPDATE_PHONE_SUCCESS;
+         }else{
+             return ServiceStatus.UPDATE_PHONE_FAILED;
+         }
+     }
+
 
     /**
      * 获取用户绑定手机号信息

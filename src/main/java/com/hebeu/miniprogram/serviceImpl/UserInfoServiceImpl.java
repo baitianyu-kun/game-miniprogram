@@ -12,6 +12,10 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UserInfoMapper userInfoMapper;
 
+    public void setUserInfoMapper(UserInfoMapper userInfoMapper) {
+        this.userInfoMapper = userInfoMapper;
+    }
+
     @Override
     public int insertUser(UserInfo userInfo) {
         return userInfoMapper.insertUser(userInfo);
@@ -21,4 +25,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfo findUser(String openId) {
         return userInfoMapper.findUser(openId);
     }
+
+    @Override
+    public int insertUserPhone(int userId, String phoneNumber) {
+        return userInfoMapper.insertUserPhone(userId,phoneNumber);
+    }
+
+
 }

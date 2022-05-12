@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RecruitInfo {
 
+  private EnterpriseInfo enterpriseInfo; //personal is null
   private long recruitId;
   private long userId;
   private long enterpriseId;

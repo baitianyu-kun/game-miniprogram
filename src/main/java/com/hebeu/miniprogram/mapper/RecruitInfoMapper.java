@@ -2,16 +2,80 @@ package com.hebeu.miniprogram.mapper;
 
 import com.hebeu.miniprogram.entity.ExpectedJobInfo;
 import com.hebeu.miniprogram.entity.RecruitInfo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface RecruitInfoMapper {
 
-    @Options(useGeneratedKeys = true,keyProperty = "recruit_id")
-    @Insert("insert into recruit_info values (#{recruitId},#{userId},#{enterpriseId},#{recruitType},#{recruitPosition},#{workType},#{workTime},#{workLocation},#{workPayment},#{workContent},#{workPeriod},#{contactInfo},#{releaseTime})")
+    String basicSelectSql = "select ri.recruit_id,\n" +
+            "       ri.user_id,\n" +
+            "       ri.enterprise_id,\n" +
+            "       ri.recruit_type,\n" +
+            "       ri.recruit_position,\n" +
+            "       ri.work_type,\n" +
+            "       ri.work_time,\n" +
+            "       ri.work_location,\n" +
+            "       ri.work_payment,\n" +
+            "       ri.work_content,\n" +
+            "       ri.work_period,\n" +
+            "       ri.contact_info,\n" +
+            "       ri.release_time,\n" +
+            "       ei.enterprise_id,\n" +
+            "       ei.enterprise_name,\n" +
+            "       ei.enterprise_info,\n" +
+            "       ei.contact_info\n" +
+            "from recruit_info ri\n" +
+            "         left join enterprise_info ei on ri.enterprise_id = ei.enterprise_id\n";
+
+    @Options(useGeneratedKeys = true, keyProperty = "recruit_id")
+    @Insert("insert into recruit_info" +
+            "(recruit_id,user_id, enterprise_id, recruit_type, " +
+            "recruit_position, work_type, work_time," +
+            "work_location, work_payment, work_content, " +
+            "work_period, contact_info, release_time) " +
+            "values " +
+            "(#{recruitId},#{userId},#{enterpriseId},#{recruitType}," +
+            "#{recruitPosition},#{workType},#{workTime}," +
+            "#{workLocation},#{workPayment},#{workContent}," +
+            "#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertRecruitInfo(RecruitInfo recruitInfo);
 
+    @Select(basicSelectSql+"where ei.enterprise_name like #{EnterpriseName}")
+    @Results(id = "recruitInfoResults", value = {
+            @Result(column = "recruit_id", property = "recruitId"),
+            @Result(column = "user_id", property = "userId"),
+            @Result(column = "enterprise_id", property = "enterpriseId"),
+            @Result(column = "recruit_type", property = "recruitType"),
+            @Result(column = "recruit_position", property = "recruitPosition"),
+            @Result(column = "work_type", property = "workType"),
+            @Result(column = "work_time", property = "workTime"),
+            @Result(column = "work_location", property = "workLocation"),
+            @Result(column = "work_payment", property = "workPayment"),
+            @Result(column = "work_content", property = "workContent"),
+            @Result(column = "work_period", property = "workPeriod"),
+            @Result(column = "contact_info", property = "contactInfo"),
+            @Result(column = "release_time", property = "releaseTime"),
+            @Result(column = "enterprise_id", property = "enterpriseInfo.enterpriseId"),
+            @Result(column = "enterprise_name", property = "enterpriseInfo.enterpriseName"),
+            @Result(column = "enterprise_info", property = "enterpriseInfo.enterpriseInfo"),
+            @Result(column = "enterprise_contact_info", property = "enterpriseInfo.contactInfo")
+    })
+    List<RecruitInfo> searchRecruitByEnterpriseName(String enterpriseName);
+
+    @Select(basicSelectSql)
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchAllRecruit();
+
+    @Select(basicSelectSql+"where ri.recruit_type = #{recruitType}")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByRecruitType(String recruitType);
+
+    List<RecruitInfo> searchRecruitByRecruitPosition(String recruitPosition);
+
+    List<RecruitInfo> searchRecruitByWorkLocation(String workLocation);
+
+    List<RecruitInfo> searchRecruitByWorkPayment(String workPayment);
 
 }

@@ -13,4 +13,5 @@ public interface ExpectedJobInfoMapper {
     @Insert("insert into expected_job_info values (#{expectedId},#{userId},#{workTime},#{workLocation},#{workPayment},#{workType},#{workContent},#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertExpectedJobInfo(ExpectedJobInfo expectedJobInfo);
 
+
 }
