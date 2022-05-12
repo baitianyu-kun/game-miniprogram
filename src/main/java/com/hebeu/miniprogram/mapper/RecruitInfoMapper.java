@@ -42,7 +42,7 @@ public interface RecruitInfoMapper {
             "#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertRecruitInfo(RecruitInfo recruitInfo);
 
-    @Select(basicSelectSql+"where ei.enterprise_name like #{EnterpriseName}")
+    @Select(basicSelectSql)
     @Results(id = "recruitInfoResults", value = {
             @Result(column = "recruit_id", property = "recruitId"),
             @Result(column = "user_id", property = "userId"),
@@ -62,20 +62,38 @@ public interface RecruitInfoMapper {
             @Result(column = "enterprise_info", property = "enterpriseInfo.enterpriseInfo"),
             @Result(column = "enterprise_contact_info", property = "enterpriseInfo.contactInfo")
     })
-    List<RecruitInfo> searchRecruitByEnterpriseName(String enterpriseName);
-
-    @Select(basicSelectSql)
-    @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchAllRecruit();
 
-    @Select(basicSelectSql+"where ri.recruit_type = #{recruitType}")
+    @Select(basicSelectSql + "where ei.enterprise_name like #{EnterpriseName}")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByEnterpriseName(String enterpriseName);
+
+    @Select(basicSelectSql + "where ri.recruit_type = #{recruitType}")
     @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchRecruitByRecruitType(String recruitType);
 
+    @Select(basicSelectSql + "where ri.recruit_position = #{recruitPosition}")
+    @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchRecruitByRecruitPosition(String recruitPosition);
 
+    @Select(basicSelectSql + "where ri.work_location = #{workLocation}")
+    @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchRecruitByWorkLocation(String workLocation);
 
+    @Select(basicSelectSql + "where ri.work_payment = #{workPayment}")
+    @ResultMap(value = "recruitInfoResults")
     List<RecruitInfo> searchRecruitByWorkPayment(String workPayment);
 
+    @Select(basicSelectSql + "where ri.work_period = #{workPeriod}")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByWorkPeriod(String workPeriod);
+
+    @Select(basicSelectSql + "where ri.work_type = #{workType}")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByWorkType(String workType);
+
+    // "2015-01-01 13:50:42", "2023-02-06 00:00:00"
+    @Select(basicSelectSql + "where UNIX_TIMESTAMP(ri.release_time)  >= UNIX_TIMESTAMP(#{beginTime})  and  UNIX_TIMESTAMP(ri.release_time)  <= UNIX_TIMESTAMP(#{endTime})")
+    @ResultMap(value = "recruitInfoResults")
+    List<RecruitInfo> searchRecruitByReleaseTime(String beginTime, String endTime);
 }
