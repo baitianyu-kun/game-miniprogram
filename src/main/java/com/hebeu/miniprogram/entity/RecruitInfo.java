@@ -16,6 +16,7 @@ public class RecruitInfo {
   private long enterpriseId;
   private String recruitType;
   private String recruitPosition;
+  private String recruitRequirement;
   private String workType;
   private String workTime;
   private String workLocation;

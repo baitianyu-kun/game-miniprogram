@@ -14,6 +14,7 @@ public interface RecruitInfoMapper {
             "       ri.enterprise_id,\n" +
             "       ri.recruit_type,\n" +
             "       ri.recruit_position,\n" +
+            "       ri.recruit_requirement,\n" +
             "       ri.work_type,\n" +
             "       ri.work_time,\n" +
             "       ri.work_location,\n" +
@@ -32,12 +33,12 @@ public interface RecruitInfoMapper {
     @Options(useGeneratedKeys = true, keyProperty = "recruitId")
     @Insert("insert into recruit_info" +
             "(recruit_id,user_id, enterprise_id, recruit_type, " +
-            "recruit_position, work_type, work_time," +
+            "recruit_position, recruit_requirement,work_type, work_time," +
             "work_location, work_payment, work_content, " +
             "work_period, contact_info, release_time) " +
             "values " +
             "(#{recruitId},#{userId},#{enterpriseId},#{recruitType}," +
-            "#{recruitPosition},#{workType},#{workTime}," +
+            "#{recruitPosition},#{recruitRequirement},#{workType},#{workTime}," +
             "#{workLocation},#{workPayment},#{workContent}," +
             "#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertRecruitInfo(RecruitInfo recruitInfo);
@@ -46,6 +47,7 @@ public interface RecruitInfoMapper {
     @Update("update recruit_info set " +
             "recruit_type=#{recruitType}," +
             "recruit_position=#{recruitPosition}," +
+            "recruit_requirement=#{recruitRequirement}," +
             "work_type=#{workType}," +
             "work_time=#{workTime}," +
             "work_location=#{workLocation}," +
@@ -70,6 +72,7 @@ public interface RecruitInfoMapper {
             @Result(column = "enterprise_id", property = "enterpriseId"),
             @Result(column = "recruit_type", property = "recruitType"),
             @Result(column = "recruit_position", property = "recruitPosition"),
+            @Result(column = "recruit_requirement",property = "recruitRequirement"),
             @Result(column = "work_type", property = "workType"),
             @Result(column = "work_time", property = "workTime"),
             @Result(column = "work_location", property = "workLocation"),
