@@ -24,18 +24,28 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfo findUser(String openId) {
+    public UserInfo searchUserByOpenId(String openId) {
         return userInfoMapper.findUser(openId);
     }
 
     @Override
     public int insertUserPhone(int userId, String phoneNumber) {
-        return userInfoMapper.insertUserPhone(userId,phoneNumber);
+        return userInfoMapper.insertUserPhone(userId, phoneNumber);
     }
 
     @Override
-    public String getUserType(int userId) {
+    public String getUserTypeByUserId(int userId) {
         return userInfoMapper.getUserType(userId);
+    }
+
+    @Override
+    public int deleteUser(int userId) {
+        return userInfoMapper.deleteUser(userId);
+    }
+
+    @Override
+    public int updateUser(UserInfo userInfo) {
+        return userInfoMapper.updateUser(userInfo);
     }
 
 

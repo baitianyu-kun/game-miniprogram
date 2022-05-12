@@ -58,7 +58,7 @@ public class UserInfoController {
     @GetMapping("/info")
     public String info(String appid, String openid,String userType, String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
-        UserInfo findUserInfo=userInfoService.findUser(openid);
+        UserInfo findUserInfo=userInfoService.searchUserByOpenId(openid);
         if (findUserInfo!=null){
             //是否为新用户
             findUserInfo.setNew(false);

@@ -10,7 +10,12 @@ import java.util.List;
 public interface ResumeInfoMapper {
 
     @Options(useGeneratedKeys = true, keyProperty = "resumeId")
-    @Insert("insert into resume_info values (#{resumeId},#{recruitId},#{userId},#{resumeFileUrl},#{resumeStatus})")
+    @Insert("insert into resume_info (" +
+            "recruit_id, " +
+            "user_id, " +
+            "resume_file_url, " +
+            "resume_status) " +
+            "values (#{recruitId},#{userId},#{resumeFileUrl},#{resumeStatus})")
     int insertResumeInfo(ResumeInfo resumeInfo);
 
     @Delete("delete from resume_info where resume_id=#{resumeId}")
@@ -25,7 +30,7 @@ public interface ResumeInfoMapper {
     @Select("select * from resume_info where resume_id=#{resumeId}")
     ResumeInfo searchResumeInfoByResumeId(int resumeId);
 
-    //根据某个岗位查找所有简历
+    //根据某个岗位id查找所有简历
     @Select("select * from resume_info where recruit_id=#{recruitId}")
     List<ResumeInfo> searchResumeInfoByRecruitId(int recruitId);
 

@@ -1,16 +1,22 @@
 package com.hebeu.miniprogram.service;
 
 import com.hebeu.miniprogram.entity.UserInfo;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Service;
 
 public interface UserInfoService {
 
     int insertUser(UserInfo userInfo);
 
-    UserInfo findUser(String openId);
+    UserInfo searchUserByOpenId(String openId);
 
     int insertUserPhone(int userId,String phoneNumber);
 
-    String getUserType(int userId);
+    String getUserTypeByUserId(int userId);
+
+    int deleteUser(int userId);
+
+    int updateUser(UserInfo userInfo);
 
 }

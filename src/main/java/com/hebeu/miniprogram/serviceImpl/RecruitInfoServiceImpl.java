@@ -34,8 +34,10 @@ public class RecruitInfoServiceImpl implements RecruitInfoService {
     public int insertRecruitInfo(RecruitInfo recruitInfo) {
         //是个人用户的话,就没有企业信息
         if (userInfoMapper.getUserType((int) recruitInfo.getUserId()).equals(Type.PERSONAL)) {
+            recruitInfo.setRecruitType(Type.PERSONAL);
             return recruitInfoMapper.insertRecruitInfo(recruitInfo);
         } else {
+            recruitInfo.setRecruitType(Type.ENTERPRISE);
             if (enterpriseInfoMapper.insertEnterpriseInfo(recruitInfo.getEnterpriseInfo()) != 0) {
                 recruitInfo.setEnterpriseId(recruitInfo.getEnterpriseInfo().getEnterpriseId());
                 return recruitInfoMapper.insertRecruitInfo(recruitInfo);
@@ -47,7 +49,11 @@ public class RecruitInfoServiceImpl implements RecruitInfoService {
 
     @Override
     public int updateRecruitInfo(RecruitInfo recruitInfo) {
-        return recruitInfoMapper.updateRecruitInfo(recruitInfo);
+        if (enterpriseInfoMapper.updateEnterpriseInfo(recruitInfo.getEnterpriseInfo())!=0){
+            return recruitInfoMapper.updateRecruitInfo(recruitInfo);
+        }else{
+            return 0;
+        }
     }
 
     @Override

@@ -43,7 +43,7 @@ public interface RecruitInfoMapper {
     int insertRecruitInfo(RecruitInfo recruitInfo);
 
     //修改招聘信息不可修改recruit id，user id和enterprise id
-    @Update("update recruit_info set" +
+    @Update("update recruit_info set " +
             "recruit_type=#{recruitType}," +
             "recruit_position=#{recruitPosition}," +
             "work_type=#{workType}," +
@@ -53,7 +53,7 @@ public interface RecruitInfoMapper {
             "work_content=#{workContent}," +
             "work_period=#{workPeriod}," +
             "contact_info=#{contactInfo}," +
-            "release_time=#{releaseTime}, where recruit_id=#{recruitId}")
+            "release_time=#{releaseTime} where recruit_id=#{recruitId}")
     int updateRecruitInfo(RecruitInfo recruitInfo);
 
     @Delete("delete ri,ei\n" +

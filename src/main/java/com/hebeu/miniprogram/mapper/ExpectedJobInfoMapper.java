@@ -10,7 +10,8 @@ import java.util.List;
 public interface ExpectedJobInfoMapper {
 
     @Options(useGeneratedKeys = true, keyProperty = "expectedId")
-    @Insert("insert into expected_job_info values (#{expectedId},#{userId},#{workTime},#{workLocation},#{workPayment},#{workType},#{workContent},#{workPeriod},#{contactInfo},#{releaseTime})")
+    @Insert("insert into expected_job_info(user_id, work_time, work_location, work_payment, work_type, work_content, work_period, contact_info, release_time) " +
+            "values (#{userId},#{workTime},#{workLocation},#{workPayment},#{workType},#{workContent},#{workPeriod},#{contactInfo},#{releaseTime})")
     int insertExpectedJobInfo(ExpectedJobInfo expectedJobInfo);
 
     @Delete("delete from expected_job_info where expected_id=#{expectedId}")
