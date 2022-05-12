@@ -38,7 +38,6 @@ public class UserInfoController {
      * 登陆接口
      */
     @GetMapping("/login")
-    @WebLog(description = "login")
     public String login(@PathVariable String appid, String code) {
         if (StringUtils.isBlank(code)) {
             return "empty jscode";
