@@ -49,6 +49,6 @@ public class ServiceStatus {
     public final static String UPDATE_RESUME_INFO_STATUS_FAILED = "UPDATE_RESUME_INFO_STATUS_FAILED";
     public final static String UPDATE_RESUME_INFO_SUCCESS = "UPDATE_RESUME_INFO_SUCCESS";
     public final static String UPDATE_RESUME_INFO_FAILED = "UPDATE_RESUME_INFO_FAILED";
-
-
+    public final static String GET_USER_BY_USER_ID_FAILED="GET_USER_BY_USER_ID_FAILED";
+    public final static String GET_USER_TYPE_FAILED="GET_USER_TYPE_FAILED";
 }

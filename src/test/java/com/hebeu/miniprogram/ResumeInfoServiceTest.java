@@ -15,14 +15,14 @@ public class ResumeInfoServiceTest {
 
     @Test
     void resumeInfoServiceTest(){
-//        for (int userid_recruitid=1; userid_recruitid<=15; userid_recruitid++){
-//            ResumeInfo resumeInfo=new ResumeInfo();
-//            resumeInfo.setResumeStatus(ServiceStatus.RESUME_ACCEPTED);
-//            resumeInfo.setResumeFileUrl("file url");
-//            resumeInfo.setRecruitId(userid_recruitid);
-//            resumeInfo.setUserId(userid_recruitid);
-//            System.err.println(resumeInfoService.insertResumeInfo(resumeInfo));
-//        }
+        for (int userid_recruitid = 1; userid_recruitid <= 15; userid_recruitid++) {
+            ResumeInfo resumeInfo = new ResumeInfo();
+            resumeInfo.setResumeStatus(ServiceStatus.RESUME_ACCEPTED);
+            resumeInfo.setResumeFileUrl("file url");
+            resumeInfo.setRecruitId(userid_recruitid);
+            resumeInfo.setUserId(userid_recruitid);
+            System.err.println(resumeInfoService.insertResumeInfo(resumeInfo));
+        }
 
         System.err.println("searchAllResumeInfo="+resumeInfoService.searchAllResumeInfo());
         System.err.println("searchResumeInfoByResumeId(1)="+resumeInfoService.searchResumeInfoByResumeId(1));
@@ -38,7 +38,7 @@ public class ResumeInfoServiceTest {
         resumeInfo.setResumeId(14);
         System.err.println("updateResumeInfo="+resumeInfoService.updateResumeInfo(resumeInfo));
 
-        System.err.println("deleteResumeInfo="+resumeInfoService.deleteResumeInfo(13));
+//        System.err.println("deleteResumeInfo="+resumeInfoService.deleteResumeInfo(13));
     }
 
 }

@@ -18,7 +18,7 @@ public class RecruitInfoServiceTest {
 
     @Test
     void recruitInfoServiceTest(){
-        for (int userid=1;userid<=6;userid++){
+        for (int userid=1;userid<=15;userid++){
             RecruitInfo recruitInfo=new RecruitInfo();
             EnterpriseInfo enterpriseInfo=new EnterpriseInfo();
             enterpriseInfo.setEnterpriseInfo("info");
@@ -71,7 +71,7 @@ public class RecruitInfoServiceTest {
         recruitInfo.setReleaseTime(new Timestamp(System.currentTimeMillis()));
         System.err.println("updateRecruitInfo="+recruitInfoService.updateRecruitInfo(recruitInfo));
 
-        System.err.println("deleteRecruitInfo="+recruitInfoService.deleteRecruitInfo(4));
+//        System.err.println("deleteRecruitInfo="+recruitInfoService.deleteRecruitInfo(4));
 
     }
 }

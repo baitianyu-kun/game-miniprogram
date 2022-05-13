@@ -25,7 +25,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfo searchUserByOpenId(String openId) {
-        return userInfoMapper.findUser(openId);
+        return userInfoMapper.getUserByOpenId(openId);
     }
 
     @Override
@@ -35,7 +35,12 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public String getUserTypeByUserId(int userId) {
-        return userInfoMapper.getUserType(userId);
+        return userInfoMapper.getUserTypeByUserId(userId);
+    }
+
+    @Override
+    public UserInfo getUserByUserId(int userId) {
+        return userInfoMapper.getUserByUserId(userId);
     }
 
     @Override

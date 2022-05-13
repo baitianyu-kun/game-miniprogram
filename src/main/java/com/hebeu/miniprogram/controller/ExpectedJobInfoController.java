@@ -19,6 +19,9 @@ public class ExpectedJobInfoController {
     @Autowired
     private ExpectedJobInfoService expectedJobInfoService;
 
+    /**
+     *插入期待职位信息
+     */
     @GetMapping("/insert_expected_job_info")
     public String insertExpectedJobInfo(String JSON_expectedJobInfo) {
         ExpectedJobInfo expectedJobInfo = JSON.parseObject(JSON_expectedJobInfo, ExpectedJobInfo.class);

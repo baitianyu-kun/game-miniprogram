@@ -36,6 +36,9 @@ public class ResumeInfoController {
     @Autowired
     private ResumeInfoService resumeInfoService;
 
+    /**
+     *删除简历信息
+     */
     @GetMapping("/delete_resume_info")
     public String deleteResumeInfo(int resumeId) {
         int i = resumeInfoService.deleteResumeInfo(resumeId);
@@ -45,6 +48,9 @@ public class ResumeInfoController {
             return ServiceStatus.DELETE_RESUME_INFO_FAILED;
     }
 
+    /**
+     *插入简历信息
+     */
     @GetMapping("/insert_resume_info")
     public List<String> insertResumeInfo(@PathVariable String appid, HttpServletRequest request, @PathVariable int userId, int recruit_id) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
@@ -75,6 +81,9 @@ public class ResumeInfoController {
         return result;
     }
 
+    /**
+     *获取所有简历信息
+     */
     @GetMapping("/search_all_resume_info")
     public String searchAllResumeInfo() {
         List<ResumeInfo> resumeInfos = resumeInfoService.searchAllResumeInfo();
@@ -84,6 +93,9 @@ public class ResumeInfoController {
             return ServiceStatus.SEARCH_ALL_RESUME_INFO_FAILED;
     }
 
+    /**
+     *获取该用户所发表的所有简历信息
+     */
     @GetMapping("/search_resume_info_by_user_id")
     public String searchResumeInfoByUserId(@PathVariable int userId) {
         List<ResumeInfo> resumeInfos = resumeInfoService.searchResumeInfoByUserId(userId);
@@ -93,6 +105,9 @@ public class ResumeInfoController {
             return ServiceStatus.SEARCH_RESUME_INFO_BY_USER_ID_FAILED;
     }
 
+    /**
+     *根据简历id搜寻简历
+     */
     @GetMapping("/search_resume_info_by_resume_id")
     public String searchResumeInfoByResumeId(int resumeId) {
         ResumeInfo resumeInfo = resumeInfoService.searchResumeInfoByResumeId(resumeId);
@@ -102,6 +117,9 @@ public class ResumeInfoController {
             return ServiceStatus.SEARCH_RESUME_INFO_BY_RESUME_ID_FAILED;
     }
 
+    /**
+     *获取所有投递到这个岗位的简历
+     */
     @GetMapping("/search_resume_info_by_recruit_id")
     public String searchResumeInfoByRecruitId(int recruitId) {
         List<ResumeInfo> resumeInfos = resumeInfoService.searchResumeInfoByRecruitId(recruitId);
@@ -111,6 +129,9 @@ public class ResumeInfoController {
             return ServiceStatus.SEARCH_RESUME_INFO_BY_RECRUIT_ID_FAILED;
     }
 
+    /**
+     *更新简历状态
+     */
     @GetMapping("/update_resume_info_status")
     public String updateResumeInfoStatus(String resumeStatus, int resumeId) {
         int i = resumeInfoService.updateResumeInfoStatus(resumeStatus, resumeId);
@@ -120,6 +141,9 @@ public class ResumeInfoController {
             return ServiceStatus.UPDATE_RESUME_INFO_STATUS_FAILED;
     }
 
+    /**
+     *更新简历信息
+     */
     @GetMapping("/update_resume_info")
     public String updateResumeInfo(String JSON_resumeInfo) {
         ResumeInfo resumeInfo = JSON.parseObject(JSON_resumeInfo, ResumeInfo.class);

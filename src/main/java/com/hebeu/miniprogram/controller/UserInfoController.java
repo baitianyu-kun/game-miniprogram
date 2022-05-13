@@ -35,7 +35,7 @@ public class UserInfoController {
     }
 
     /**
-     * 登陆接口
+     * 登录接口
      */
     @GetMapping("/login")
     public String login(@PathVariable String appId, String code) {
@@ -53,6 +53,18 @@ public class UserInfoController {
     }
 
     /**
+     *根据用户id获取用户信息
+     */
+    @GetMapping("/get_user_by_id")
+    public String getUserByUserId(int userId){
+        UserInfo userByUserId = userInfoService.getUserByUserId(userId);
+        if (userByUserId!=null)
+            return JSON.toJSONString(userByUserId);
+        else
+            return ServiceStatus.GET_USER_BY_USER_ID_FAILED;
+    }
+
+    /**
      * 用户注销接口
      */
     @GetMapping("/delete")
@@ -65,9 +77,21 @@ public class UserInfoController {
     }
 
     /**
-     * 获取用户信息接口
+     *获取用户类型，具体类型在Type.class中
      */
-    @GetMapping("/info")
+    @GetMapping("/get_user_type")
+    public String getUserType(int userId){
+        String userTypeByUserId = userInfoService.getUserTypeByUserId(userId);
+        if (userTypeByUserId!=null)
+            return userTypeByUserId;
+        else
+            return ServiceStatus.GET_USER_TYPE_FAILED;
+    }
+
+    /**
+     * 获取当前手机已经登陆的用户信息接口
+     */
+    @GetMapping("/get_now_user_info")
     public String info(@PathVariable String appId, String openid, String userType, String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
         UserInfo findUserInfo = userInfoService.searchUserByOpenId(openid);

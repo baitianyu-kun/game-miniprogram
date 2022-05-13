@@ -33,16 +33,20 @@ public interface UserInfoMapper {
     int insertUser(UserInfo userInfo);
 
     @Select("select * from user_info where open_id = #{openId}")
-    UserInfo findUser(String openId);
+    UserInfo getUserByOpenId(String openId);
+
+    @Select("select * from user_info where user_id = #{userId}")
+    UserInfo getUserByUserId(int userId);
 
     @Update("update user_info set phone_number = #{phoneNumber} where user_id = #{userId}")
     int insertUserPhone(int userId, String phoneNumber);
 
     @Select("select user_type from user_info where user_id=#{userId}")
-    String getUserType(int userId);
+    String getUserTypeByUserId(int userId);
 
     @Delete("delete from user_info where user_id=#{userId}")
     int deleteUser(int userId);
+
 
     @Update("update user_info set " +
             "user_type=#{userType}," +

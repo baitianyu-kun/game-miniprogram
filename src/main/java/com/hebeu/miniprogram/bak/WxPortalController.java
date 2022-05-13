@@ -1,4 +1,4 @@
-package com.hebeu.miniprogram.controller;
+package com.hebeu.miniprogram.bak;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaMessage;

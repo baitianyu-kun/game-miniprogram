@@ -33,7 +33,7 @@ public class RecruitInfoServiceImpl implements RecruitInfoService {
     @Override
     public int insertRecruitInfo(RecruitInfo recruitInfo) {
         //是个人用户的话,就没有企业信息
-        if (userInfoMapper.getUserType((int) recruitInfo.getUserId()).equals(Type.PERSONAL)) {
+        if (userInfoMapper.getUserTypeByUserId((int) recruitInfo.getUserId()).equals(Type.PERSONAL)) {
             recruitInfo.setRecruitType(Type.PERSONAL);
             return recruitInfoMapper.insertRecruitInfo(recruitInfo);
         } else {

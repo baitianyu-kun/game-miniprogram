@@ -15,6 +15,8 @@ public interface UserInfoService {
 
     String getUserTypeByUserId(int userId);
 
+    UserInfo getUserByUserId(int userId);
+
     int deleteUser(int userId);
 
     int updateUser(UserInfo userInfo);

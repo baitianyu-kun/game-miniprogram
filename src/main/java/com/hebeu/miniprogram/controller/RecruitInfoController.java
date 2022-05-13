@@ -20,6 +20,9 @@ public class RecruitInfoController {
     @Autowired
     private RecruitInfoService recruitInfoService;
 
+    /**
+     *插入招聘信息
+     */
     @GetMapping("/insert_recruit_info")
     public String insertRecruitInfo(String JSON_RecruitInfo) {
         RecruitInfo recruitInfo = JSON.parseObject(JSON_RecruitInfo, RecruitInfo.class);
