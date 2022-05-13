@@ -6,6 +6,7 @@ import com.hebeu.miniprogram.service.RecruitInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,7 @@ import javax.print.DocFlavor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/recruit")
+@RequestMapping("/{appId}/{openId}/{userId}/recruit")
 public class RecruitInfoController {
 
     @Autowired
@@ -139,7 +140,7 @@ public class RecruitInfoController {
     }
 
     @GetMapping("/search_recruit_by_user_id")
-    public String searchRecruitByUserId(int userId) {
+    public String searchRecruitByUserId(@PathVariable int userId) {
         List<RecruitInfo> recruitInfos = recruitInfoService.searchRecruitByUserId(userId);
         if (recruitInfos != null)
             return JSON.toJSONString(recruitInfos);

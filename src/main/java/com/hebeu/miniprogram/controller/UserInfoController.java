@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user/{appid}")
+@RequestMapping("/{appId}/user")
 public class UserInfoController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -38,11 +38,11 @@ public class UserInfoController {
      * 登陆接口
      */
     @GetMapping("/login")
-    public String login(@PathVariable String appid, String code) {
+    public String login(@PathVariable String appId, String code) {
         if (StringUtils.isBlank(code)) {
             return "empty jscode";
         }
-        final WxMaService wxService = WxMaConfiguration.getMaService(appid);
+        final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
             return JSON.toJSONString(session);
@@ -68,7 +68,7 @@ public class UserInfoController {
      * 获取用户信息接口
      */
     @GetMapping("/info")
-    public String info(@PathVariable String appid, String openid, String userType, String sessionKey,
+    public String info(@PathVariable String appId, String openid, String userType, String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
         UserInfo findUserInfo = userInfoService.searchUserByOpenId(openid);
         if (findUserInfo != null) {
@@ -77,14 +77,14 @@ public class UserInfoController {
             return JSON.toJSONString(findUserInfo);
         } else {
             //不是新用户的话，解密用户信息
-            final WxMaService wxService = WxMaConfiguration.getMaService(appid);
+            final WxMaService wxService = WxMaConfiguration.getMaService(appId);
             if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
                 return ServiceStatus.USER_CHECK_FAILED;
             }
             WxMaUserInfo tempUserInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
             UserInfo newUserInfo = new UserInfo();
             newUserInfo.setNew(true);
-            newUserInfo.setAppid(appid);
+            newUserInfo.setAppid(appId);
             newUserInfo.setOpenId(openid);
             newUserInfo.setAvatarUrl(tempUserInfo.getAvatarUrl());
             newUserInfo.setCity(tempUserInfo.getCity());
@@ -118,9 +118,9 @@ public class UserInfoController {
      * 获取用户绑定手机号信息
      */
     @GetMapping("/phone")
-    public String phone(@PathVariable String appid, String sessionKey, String signature,
+    public String phone(@PathVariable String appId, String sessionKey, String signature,
                         String rawData, String encryptedData, String iv) {
-        final WxMaService wxService = WxMaConfiguration.getMaService(appid);
+        final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         // 用户信息校验
         if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
             return ServiceStatus.USER_CHECK_FAILED;
@@ -134,8 +134,8 @@ public class UserInfoController {
      * 新的获取方式，但是仅针对已经认证过的用户
      */
     @GetMapping("/new_phone")
-    public String newphone(@PathVariable String appid, String code) {
-        final WxMaService wxService = WxMaConfiguration.getMaService(appid);
+    public String newphone(@PathVariable String appId, String code) {
+        final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         try {
             return JsonUtils.toJson(wxService.getUserService().getNewPhoneNoInfo(code));
         } catch (Exception e) {

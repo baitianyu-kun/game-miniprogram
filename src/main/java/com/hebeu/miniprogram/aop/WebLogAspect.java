@@ -14,36 +14,18 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 
-/**
- * @author 犬小哈 （微信号：小哈学Java）
- * @site www.exception.site
- * @date 2019/2/12
- * @time 下午9:19
- * @discription
- **/
 @Aspect
 @Component
 public class WebLogAspect {
 
     private final static Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
-    /**
-     * 换行符
-     */
+
     private static final String LINE_SEPARATOR = System.lineSeparator();
 
-    /**
-     * 以自定义 @WebLog 注解为切点
-     */
     @Pointcut("@annotation(com.hebeu.miniprogram.aop.WebLog)")
     public void webLog() {
     }
 
-    /**
-     * 在切点之前织入
-     *
-     * @param joinPoint
-     * @throws Throwable
-     */
     @Before("webLog()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
         // 开始打印请求日志
@@ -69,24 +51,12 @@ public class WebLogAspect {
         logger.info("Request Args   : {}", JsonUtils.toJson(joinPoint.getArgs()));
     }
 
-    /**
-     * 在切点之后织入
-     *
-     * @throws Throwable
-     */
     @After("webLog()")
     public void doAfter() throws Throwable {
         // 接口结束后换行，方便分割查看
 
     }
 
-    /**
-     * 环绕
-     *
-     * @param proceedingJoinPoint
-     * @return
-     * @throws Throwable
-     */
     @Around("webLog()")
     public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
@@ -100,13 +70,6 @@ public class WebLogAspect {
     }
 
 
-    /**
-     * 获取切面注解的描述
-     *
-     * @param joinPoint 切点
-     * @return 描述信息
-     * @throws Exception
-     */
     public String getAspectLogDescription(JoinPoint joinPoint)
             throws Exception {
         String targetName = joinPoint.getTarget().getClass().getName();

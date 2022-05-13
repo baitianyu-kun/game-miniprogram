@@ -6,13 +6,14 @@ import com.hebeu.miniprogram.service.ExpectedJobInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/expect")
+@RequestMapping("/{appId}/{openId}/{userId}/expect")
 public class ExpectedJobInfoController {
 
     @Autowired
@@ -47,7 +48,7 @@ public class ExpectedJobInfoController {
     }
 
     @GetMapping("/search_expected_job_info_by_user_id")
-    public String searchExpectedJobInfoByUserId(int userId) {
+    public String searchExpectedJobInfoByUserId(@PathVariable int userId) {
         List<ExpectedJobInfo> expectedJobInfos = expectedJobInfoService.searchExpectedJobInfoByUserId(userId);
         if (expectedJobInfos != null)
             return JSON.toJSONString(expectedJobInfos);

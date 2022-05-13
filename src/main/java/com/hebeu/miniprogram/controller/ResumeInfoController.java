@@ -30,7 +30,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @RestController
-@RequestMapping("/resume")
+@RequestMapping("/{appId}/{openId}/{userId}/resume")
 public class ResumeInfoController {
 
     @Autowired
@@ -46,7 +46,7 @@ public class ResumeInfoController {
     }
 
     @GetMapping("/insert_resume_info")
-    public List<String> insertResumeInfo(String appid, HttpServletRequest request, int userId, int recruit_id) {
+    public List<String> insertResumeInfo(@PathVariable String appid, HttpServletRequest request, @PathVariable int userId, int recruit_id) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
         CommonsMultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         if (!resolver.isMultipart(request)) {
@@ -85,7 +85,7 @@ public class ResumeInfoController {
     }
 
     @GetMapping("/search_resume_info_by_user_id")
-    public String searchResumeInfoByUserId(int userId) {
+    public String searchResumeInfoByUserId(@PathVariable int userId) {
         List<ResumeInfo> resumeInfos = resumeInfoService.searchResumeInfoByUserId(userId);
         if (resumeInfos != null)
             return JSON.toJSONString(resumeInfos);

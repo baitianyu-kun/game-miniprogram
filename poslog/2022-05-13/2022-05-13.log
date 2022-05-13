@@ -1,0 +1,12 @@
+2022-05-13 17:36:35.603 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 14328 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-13 17:36:35.605 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-13 17:36:37.011 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-13 17:36:37.019 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-13 17:36:37.020 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-13 17:36:37.024 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-13 17:36:37.155 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-13 17:36:37.156 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1513 ms
+2022-05-13 17:36:37.749 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-13 17:36:38.668 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-13 17:36:38.689 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-13 17:36:38.698 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 3.636 seconds (JVM running for 4.472)
