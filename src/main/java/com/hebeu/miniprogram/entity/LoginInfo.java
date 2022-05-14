@@ -8,9 +8,9 @@ public class LoginInfo {
 
     private String sessionKey;
 
-    private String openid;
+    private String openId;
 
-    private String unionid;
+    private String unionId;
 
     private String sessionId;
 

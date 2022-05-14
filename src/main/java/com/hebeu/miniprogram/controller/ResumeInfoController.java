@@ -3,10 +3,8 @@ package com.hebeu.miniprogram.controller;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.constant.WxMaConstants;
 import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
-import com.hebeu.miniprogram.aop.WebLog;
 import com.hebeu.miniprogram.config.WxMaConfiguration;
 import com.hebeu.miniprogram.entity.ResumeInfo;
 import com.hebeu.miniprogram.service.ResumeInfoService;
@@ -22,7 +20,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
-import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;

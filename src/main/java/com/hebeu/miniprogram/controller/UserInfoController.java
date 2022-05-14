@@ -5,17 +5,14 @@ import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
 import cn.binarywang.wx.miniapp.bean.WxMaUserInfo;
 import com.alibaba.fastjson.JSON;
-import com.hebeu.miniprogram.aop.WebLog;
 import com.hebeu.miniprogram.config.WxMaConfiguration;
 import com.hebeu.miniprogram.entity.LoginInfo;
 import com.hebeu.miniprogram.entity.UserInfo;
 import com.hebeu.miniprogram.security.WebSessionContext;
-import com.hebeu.miniprogram.security.WebSessionListener;
 import com.hebeu.miniprogram.service.UserInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
 import com.hebeu.miniprogram.utils.JsonUtils;
 import me.chanjar.weixin.common.error.WxErrorException;
-import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,8 +50,8 @@ public class UserInfoController {
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
             LoginInfo loginInfo = new LoginInfo();
-            loginInfo.setOpenid(session.getOpenid());
-            loginInfo.setUnionid(session.getUnionid());
+            loginInfo.setOpenId(session.getOpenid());
+            loginInfo.setUnionId(session.getUnionid());
             loginInfo.setSessionKey(session.getSessionKey());
             loginInfo.setSessionId(request.getSession().getId());
             return JSON.toJSONString(loginInfo);
@@ -123,9 +120,9 @@ public class UserInfoController {
      * 获取当前手机已经登陆的用户信息接口
      */
     @GetMapping("/{sessionId}/get_now_user_info")
-    public String info(String appId, String openid, String userType, String sessionKey,
+    public String info(String appId, String openId, String userType, String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
-        UserInfo findUserInfo = userInfoService.searchUserByOpenId(openid);
+        UserInfo findUserInfo = userInfoService.searchUserByOpenId(openId);
         if (findUserInfo != null) {
             //是否为新用户
             findUserInfo.setNew(false);
@@ -140,7 +137,7 @@ public class UserInfoController {
             UserInfo newUserInfo = new UserInfo();
             newUserInfo.setNew(true);
             newUserInfo.setAppid(appId);
-            newUserInfo.setOpenId(openid);
+            newUserInfo.setOpenId(openId);
             newUserInfo.setAvatarUrl(tempUserInfo.getAvatarUrl());
             newUserInfo.setCity(tempUserInfo.getCity());
             newUserInfo.setCountry(tempUserInfo.getCountry());

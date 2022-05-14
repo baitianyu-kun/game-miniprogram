@@ -16,7 +16,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(webSessionInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/user/login2")
+                .excludePathPatterns("/user/login")
                 .excludePathPatterns("/user/logout");
         WebMvcConfigurer.super.addInterceptors(registry);
     }

@@ -1,0 +1,516 @@
+2022-05-14 18:58:18.175 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 8472 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 18:58:18.177 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 18:58:18.991 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 18:58:18.997 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 18:58:18.997 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 18:58:18.998 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 18:58:19.093 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 18:58:19.093 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 887 ms
+2022-05-14 18:58:19.414 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 18:58:20.061 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 18:58:20.077 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 18:58:20.084 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.318 seconds (JVM running for 3.009)
+2022-05-14 18:58:26.227 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 18:58:26.228 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 18:58:26.228 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-05-14 18:58:26.247 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 18:58:26.248 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 18:58:26.249 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 18:58:26.250 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 18:58:26.250 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 18:58:26.275 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","031SyvFa1kkqaD0WAQIa1Kric83SyvFQ",null,null]
+2022-05-14 18:58:26.667 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_wCPvCXDhjpohmvh19F9NjiGI2kzSOZjzxIitYcM96-mh-fq0e3_TrS8TBj_3LCQa3zX1XuXY-lCwWthIDu_aJ1zAw8T7RpwHISzIBPZtjfVTkEpCOyX8C816IfG1hS_I2dQ5aJ--5VS62TKtZSKdAAAKDV","expires_in":7200}
+2022-05-14 18:58:26.853 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"8540BC6F18E44766CBED104C08F4E623\",\"sessionKey\":\"u5wccPymZsZMNJAOS8z7FA==\"}"
+2022-05-14 18:58:26.853 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 606 ms
+2022-05-14 18:58:26.853 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/8540BC6F18E44766CBED104C08F4E623/get_now_user_info
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.info
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 18:58:30.236 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","o0V__5UtWtthNEPDoOqy1JzWKwtQ","PERSONAL","u5wccPymZsZMNJAOS8z7FA==","a01f664ec603d5552233addfcd7395168b8f4b81","{\"nickName\":\"白天宇\",\"gender\":0,\"language\":\"zh_CN\",\"city\":\"\",\"province\":\"\",\"country\":\"\",\"avatarUrl\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJskgFQKRCFvhGAPEiabibeBCj7GIMVpa7ZkLQOBHjl4y702eFsF31TPear1BjmAUccnPGLJQgH3jcA/132\"}","4d4fHIwDiNTTU4iHHwXJAzwbw8Sl84AItxWB2GYpoJLakZ1O1LX8wuWKWqfGjoqn5nJBX7PBeIeSraLN15v+5sr/0sLMyPfwU5oLwxK8hrJafVlNMoXDGANq75dRw1p12lt0KLrAUsgv5rUjDU3bGQ/LYiVF8gFqLF6HCfjOp0Ba6pLDTAApIt9IWX2w6e1fmUF14fdrF04njLnk3+OhvHw+oFQsgO9eL3PX3zps2A9cN6BDCT6hHFHEW8z7zJxpe7fYQQ4klYpYjS3UZdRHnrhHmXa9I1LemuCGtyJZ3sJz8kZ+LykJE+BusUieDgeug+YkvnilTIhXmiaDpCLpsllGuamcnkPURtmcaaVAzgXhqCXVWjahpoeXJjWjg82/nNUaDBTWdEX6MAihKSYOig==","sBFldlLJtO7xF5Q6i0gyAw=="]
+2022-05-14 18:58:30.249 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - ==>  Preparing: select * from user_info where open_id = ? 
+2022-05-14 18:58:30.264 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - ==> Parameters: o0V__5UtWtthNEPDoOqy1JzWKwtQ(String)
+2022-05-14 18:58:30.277 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - <==      Total: 0
+2022-05-14 18:58:30.284 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.insertUser - ==>  Preparing: insert into user_info(open_id, user_type, phone_number, avatar_url, nick_name, gender, language, country, province, city, appid) VALUES (?,?,?,?,?,?,?,?,?,?,?) 
+2022-05-14 18:58:30.285 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.insertUser - ==> Parameters: o0V__5UtWtthNEPDoOqy1JzWKwtQ(String), PERSONAL(String), null, https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJskgFQKRCFvhGAPEiabibeBCj7GIMVpa7ZkLQOBHjl4y702eFsF31TPear1BjmAUccnPGLJQgH3jcA/132(String), 白天宇(String), 0(String), zh_CN(String), (String), (String), (String), wxe1b4b37726e7ec84(String)
+2022-05-14 18:58:30.290 [http-nio-8080-exec-3] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.insertUser - <==    Updates: 1
+2022-05-14 18:58:30.294 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"appid\":\"wxe1b4b37726e7ec84\",\"avatarUrl\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJskgFQKRCFvhGAPEiabibeBCj7GIMVpa7ZkLQOBHjl4y702eFsF31TPear1BjmAUccnPGLJQgH3jcA/132\",\"city\":\"\",\"country\":\"\",\"gender\":\"0\",\"language\":\"zh_CN\",\"new\":true,\"nickName\":\"白天宇\",\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"province\":\"\",\"userId\":16,\"userType\":\"PERSONAL\"}"
+2022-05-14 18:58:30.294 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 58 ms
+2022-05-14 18:58:30.294 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 18:59:07.974 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","041yEMFa1mi9aD0fcJHa1mb5l42yEMFG",null,null]
+2022-05-14 18:59:08.079 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"2731F0AFB1AF8D72E29ED75BFA820266\",\"sessionKey\":\"euoLHWNUhYUfUEWVmnXcyA==\"}"
+2022-05-14 18:59:08.079 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 105 ms
+2022-05-14 18:59:08.079 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/2731F0AFB1AF8D72E29ED75BFA820266/get_now_user_info
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.info
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 18:59:10.272 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","o0V__5UtWtthNEPDoOqy1JzWKwtQ","PERSONAL","euoLHWNUhYUfUEWVmnXcyA==","66f32f09f378df9abdfe4ae53b0712ed5a2ad1ca","{\"nickName\":\"白天宇\",\"gender\":0,\"language\":\"zh_CN\",\"city\":\"\",\"province\":\"\",\"country\":\"\",\"avatarUrl\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJskgFQKRCFvhGAPEiabibeBCj7GIMVpa7ZkLQOBHjl4y702eFsF31TPear1BjmAUccnPGLJQgH3jcA/132\"}","4ERkkyFAhflyua4QOOQer7saYAr1KczjcJNbGJRbeyFLBf0gDm75NuQF0P8XNaQCsCo4owM+5XSs+iGQ6YNsB21sZviAlaqKzd9mx5491tgAwIy1pq2qqyOwTMN85HhcZKgh0qFEn1A7FHfImL6NQJJinWX0CbI6EYieZF8e8HMqszyeGe4s7gAuMjGTWU/Q+AKCM0qhHH73gGQqYZbTCvfSwFeEsrtqU1I1JgF67YyVnpKGW1UL+Z3MUG8a/h7f4Q0+kHle47AqrtcvTWIfZwuEc7nzV8o9OLuKZhtLUQpg3CV5ljdUivDZPBxnrSh33gpOoH41FeMSdkSEhGo6BiNDJipdL3dtWxzcuUPzED6QExRMatAnWIheRijlP6pziPHc5GQOovcO8Exhetlr8A==","Nl8g9y2XdFW0/i8etyOCnA=="]
+2022-05-14 18:59:10.273 [http-nio-8080-exec-4] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - ==>  Preparing: select * from user_info where open_id = ? 
+2022-05-14 18:59:10.273 [http-nio-8080-exec-4] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - ==> Parameters: o0V__5UtWtthNEPDoOqy1JzWKwtQ(String)
+2022-05-14 18:59:10.275 [http-nio-8080-exec-4] DEBUG com.hebeu.miniprogram.mapper.UserInfoMapper.getUserByOpenId - <==      Total: 1
+2022-05-14 18:59:10.276 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"appid\":\"wxe1b4b37726e7ec84\",\"avatarUrl\":\"https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJskgFQKRCFvhGAPEiabibeBCj7GIMVpa7ZkLQOBHjl4y702eFsF31TPear1BjmAUccnPGLJQgH3jcA/132\",\"city\":\"\",\"country\":\"\",\"gender\":\"0\",\"language\":\"zh_CN\",\"new\":false,\"nickName\":\"白天宇\",\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"province\":\"\",\"userId\":16,\"userType\":\"PERSONAL\"}"
+2022-05-14 18:59:10.276 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 4 ms
+2022-05-14 18:59:10.276 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:00:13.593 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","071ctK000EsbPN1rjv000W1NUJ1ctK0I",null,null]
+2022-05-14 19:00:13.858 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"0FA96049D73B5AB07B2F1C9BD2C811B4\",\"sessionKey\":\"euoLHWNUhYUfUEWVmnXcyA==\"}"
+2022-05-14 19:00:13.859 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 266 ms
+2022-05-14 19:00:13.859 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:05:51.798 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 16668 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:05:51.800 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:05:52.592 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:05:52.598 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:05:52.598 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:05:52.598 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:05:52.696 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:05:52.696 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 867 ms
+2022-05-14 19:05:53.020 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:05:53.435 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]: Factory method 'requestMappingHandlerMapping' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.ServletRequestAttributes.getRequest()" because "attributes" is null
+2022-05-14 19:05:53.437 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-05-14 19:05:53.439 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2022-05-14 19:05:53.452 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-14 19:05:53.466 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]: Factory method 'requestMappingHandlerMapping' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.ServletRequestAttributes.getRequest()" because "attributes" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.hebeu.miniprogram.MiniprogramApplication.main(MiniprogramApplication.java:11)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]: Factory method 'requestMappingHandlerMapping' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.ServletRequestAttributes.getRequest()" because "attributes" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.ServletRequestAttributes.getRequest()" because "attributes" is null
+	at com.hebeu.miniprogram.aop.WebLogAspect.doBefore(WebLogAspect.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:617)
+	at org.springframework.aop.aspectj.AspectJMethodBeforeAdvice.before(AspectJMethodBeforeAdvice.java:44)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.hebeu.miniprogram.aop.WebLogAspect.doAround(WebLogAspect.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.hebeu.miniprogram.security.WebSecurityConfig$$EnhancerBySpringCGLIB$$b7b9156a.addInterceptors(<generated>)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurerComposite.addInterceptors(WebMvcConfigurerComposite.java:88)
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration.addInterceptors(DelegatingWebMvcConfiguration.java:83)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.getInterceptors(WebMvcConfigurationSupport.java:365)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerMapping(WebMvcConfigurationSupport.java:313)
+	at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerMapping(WebMvcAutoConfiguration.java:445)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+2022-05-14 19:12:36.938 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 2672 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:12:36.941 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:12:37.747 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:12:37.752 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:12:37.753 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:12:37.753 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:12:37.851 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:12:37.851 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 882 ms
+2022-05-14 19:12:38.190 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:12:38.848 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:12:38.864 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:12:38.870 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.275 seconds (JVM running for 2.798)
+2022-05-14 19:12:44.079 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:12:44.079 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:12:44.080 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:12:44.098 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:12:44.098 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:12:44.099 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:12:44.100 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:12:44.100 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:12:44.124 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","021ueL000m8dPN1obd2000wYfa0ueL0J",null,null]
+2022-05-14 19:12:44.603 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_Xg2o9h8I7NBwQMWsURLElr2dsXe3EU4Kn6OF8G13Z8PoV6aT8j9AoDv4_9A7E6x-SFLsJ2l0Sc93kv9uWnHel9fjgt7MDjJXE_2AZz_vKdLdRwLOzv4YTaZdEmyU9YjbmzIwm5sblZxNJmCcPIMeAAAUNR","expires_in":7200}
+2022-05-14 19:12:44.760 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"E7B2E52459AAA10EB37E2FB527D2F592\",\"sessionKey\":\"mHEHJVqZjUHLjJQAh202mw==\"}"
+2022-05-14 19:12:44.760 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 662 ms
+2022-05-14 19:12:44.760 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:13:30.454 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 4248 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:13:30.456 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:13:31.294 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:13:31.300 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:13:31.300 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:13:31.300 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:13:31.394 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:13:31.394 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 908 ms
+2022-05-14 19:13:31.703 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:13:32.323 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:13:32.340 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:13:32.347 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.251 seconds (JVM running for 2.784)
+2022-05-14 19:13:36.531 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:13:36.532 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:13:36.532 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-05-14 19:13:36.553 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:13:36.553 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:13:36.554 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:13:36.554 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:13:36.555 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:13:36.585 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","021Qnj100lREON1xMR100upQuQ3Qnj1h",null,null]
+2022-05-14 19:13:36.954 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_aJSH6crTAzMIYg3gYdzL4QIrNzfvdp0O1AgTshhNnnWqUTAOtGDJbWy8WpdI4fySUmcXJNaWAgu69Z0mWgVX4a4KI4l2p3yWCk2LCbzjVLhXlMmmQS1kkjulPClrGFHsa2XNT5_Ecok_z7FVIQPjAFALTS","expires_in":7200}
+2022-05-14 19:13:37.125 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"2A5DF6E8DE9A0874ECD6B1D3F71A7429\",\"sessionKey\":\"mHEHJVqZjUHLjJQAh202mw==\"}"
+2022-05-14 19:13:37.125 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 572 ms
+2022-05-14 19:13:37.125 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:13:38.328 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - METHOD : WebSessionInterceptor.preHandle(..) ; REQUEST：[org.apache.catalina.connector.RequestFacade@2d2a5d23, org.apache.catalina.connector.ResponseFacade@74fc16a1, com.hebeu.miniprogram.controller.UserInfoController#info(String, String, String, String, String, String, String, String)] ; RESPONSE : false
+2022-05-14 19:20:01.293 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 18128 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:20:01.296 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:20:02.221 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:20:02.227 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:20:02.228 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:20:02.228 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:20:02.325 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:20:02.325 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 991 ms
+2022-05-14 19:20:02.639 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:20:03.260 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:20:03.277 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:20:03.284 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.393 seconds (JVM running for 3.044)
+2022-05-14 19:20:06.568 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:20:06.568 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:20:06.569 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:20:06.591 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:20:06.591 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:20:06.591 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:20:06.592 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:20:06.592 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:20:06.622 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","0210bbHa1THO8D00ZEGa1iBc8y00bbHi",null,null]
+2022-05-14 19:20:06.990 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_oT7Ii3BXNFf4AGun9F9NjiGI2kzSOZjzxIitYUEf1lQ8QEuUcj5RLf-rtMHzRpzmM5CHJKowWwXnCh-cInzpD4Kw2tEZ0d_6v4BNe-N6xotyMMNAlHVpPJQJSSXB07gKhlMIqTZ4b4JS-XGcNPLjAFAACY","expires_in":7200}
+2022-05-14 19:20:07.142 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"410C38233F610F4D483429DC750CB630\",\"sessionKey\":\"zXlf+Ik2N3Fuect7tBnREw==\"}"
+2022-05-14 19:20:07.142 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 552 ms
+2022-05-14 19:20:07.142 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:20:59.299 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 17664 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:20:59.302 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:21:00.127 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:21:00.133 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:21:00.133 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:21:00.133 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:21:00.233 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:21:00.233 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 896 ms
+2022-05-14 19:21:00.556 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:21:01.180 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:21:01.197 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:21:01.204 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.362 seconds (JVM running for 2.96)
+2022-05-14 19:21:04.589 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:21:04.589 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:21:04.590 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:21:04.608 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:21:04.609 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:21:04.610 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:21:04.611 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:21:04.611 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:21:04.637 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","001B8DGa1EQm9D02pvHa1NN4VJ1B8DGC",null,null]
+2022-05-14 19:21:05.131 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_g5lRnrGG-u0OE1L-1NQtOvwk7Go6M2IuEj2qV1RKaLeyfWU7avZ-STmVxD3rQjRPKI6uNtUrR8vHLXwufJnpGS2df99Dpkms_bOchqJFIAvjqRQuZmfkOjS4zb8TKRTLEIPGMNDJS7vyxzu8USNeAFAECX","expires_in":7200}
+2022-05-14 19:21:05.328 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"2BF547E285395CF74856B6D7B8B97BAB\",\"sessionKey\":\"zXlf+Ik2N3Fuect7tBnREw==\"}"
+2022-05-14 19:21:05.328 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 720 ms
+2022-05-14 19:21:05.328 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:21:06.544 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:21:06.544 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:21:06.544 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:21:06.544 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.security.WebSessionInterceptor.preHandle
+2022-05-14 19:21:06.544 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:21:06.549 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : false
+2022-05-14 19:21:06.549 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 5 ms
+2022-05-14 19:21:06.549 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:23:16.983 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 10336 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:23:16.986 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:23:17.807 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:23:17.812 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:23:17.813 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:23:17.813 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:23:17.907 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:23:17.908 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 890 ms
+2022-05-14 19:23:18.219 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:23:18.851 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:23:18.867 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:23:18.873 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.296 seconds (JVM running for 2.952)
+2022-05-14 19:23:22.382 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:23:22.382 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:23:22.383 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:23:22.405 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:23:22.405 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:23:22.406 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:23:22.408 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:23:22.408 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:23:22.433 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","061N1B100QkpON1ogC100LHdGY1N1B1C",null,null]
+2022-05-14 19:23:22.855 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_2vd8IsO6NhJ3m52Si8rA0l9UQ8-FM1eO8cUw5LZFKMjvAPw-06qvYKxcWxP15S-aUXJ9tH3pSJe3r3WHKY2qatrGcIqC7U_xM6dVTHSbPDz1wR2-TlkrPXS0LRCGg7vz9U1trlmurP5NmwRIMXGjAAAXIR","expires_in":7200}
+2022-05-14 19:23:23.048 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"4E5AA6ED752FFF72778A43C68F31A96D\",\"sessionKey\":\"WyUDuTOb+AL4Em1atBYZOw==\"}"
+2022-05-14 19:23:23.048 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 643 ms
+2022-05-14 19:23:23.048 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:23:24.732 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:23:24.732 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:23:24.732 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:23:24.732 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.security.WebSessionInterceptor.preHandle
+2022-05-14 19:23:24.733 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:23:24.737 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : false
+2022-05-14 19:23:24.737 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 5 ms
+2022-05-14 19:23:24.737 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:23:49.471 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 18184 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:23:49.473 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:23:50.326 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:23:50.332 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:23:50.332 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:23:50.332 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:23:50.429 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:23:50.429 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 922 ms
+2022-05-14 19:23:50.796 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:23:51.583 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:23:51.599 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:23:51.605 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.549 seconds (JVM running for 3.336)
+2022-05-14 19:23:54.970 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:23:54.971 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:23:54.971 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-05-14 19:23:54.991 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:23:54.992 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:23:54.993 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:23:54.994 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:23:54.994 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:23:55.022 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","051IRu000hqvPN1tiA200cA6aR2IRu0L",null,null]
+2022-05-14 19:23:55.414 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_KdGD0CvXfSx3vL_x6gEbIjY0ftWoABB3zbWy79JEAiPHA-HP0fjPnGoGvqaOOsJo0y7Cilh6xkh1xYNy46xMibLYTuHnHpGAoaWCWQJttqXNld-VmCBytSs9yamRHQt32RBa7Rwo3J2Y3nn5RYDaAEAYFK","expires_in":7200}
+2022-05-14 19:23:55.572 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"471AEEF6A344BD1AF44613A7E06FD80A\",\"sessionKey\":\"WyUDuTOb+AL4Em1atBYZOw==\"}"
+2022-05-14 19:23:55.573 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 582 ms
+2022-05-14 19:23:55.573 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:23:56.962 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:23:56.962 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:23:56.962 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:23:56.962 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.security.WebSessionInterceptor.preHandle
+2022-05-14 19:23:56.962 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:23:56.967 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : false
+2022-05-14 19:23:56.967 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 5 ms
+2022-05-14 19:23:56.967 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:24:32.644 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 14132 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:24:32.646 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:24:33.449 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:24:33.455 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:24:33.455 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:24:33.455 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:24:33.556 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:24:33.556 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 879 ms
+2022-05-14 19:24:33.874 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:24:34.491 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:24:34.508 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:24:34.515 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.235 seconds (JVM running for 3.061)
+2022-05-14 19:24:38.525 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:24:38.525 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:24:38.526 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:24:38.546 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:24:38.546 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:24:38.547 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:24:38.547 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:24:38.547 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:24:38.572 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","0110g5Ga1x9T9D0raAFa1Y1m0z20g5GF",null,null]
+2022-05-14 19:24:39.033 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_Oz_rvACtVPt52qZ0FKodxXSXgBTyfw_9ZXosl_aATRzTEvE4tZAluIfs7Mtt9wXHk1nsMqtx1JhGTPlpzj5XoIYgQqfKjgqrz2jd6L_I_cCYkP09ZrONI1i7j1_nOKIfrD8XiNY_e9hBbyFgSFKfABAOBG","expires_in":7200}
+2022-05-14 19:24:39.206 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"6E0A575A2DEDA334A8ABC50831D39244\",\"sessionKey\":\"WyUDuTOb+AL4Em1atBYZOw==\"}"
+2022-05-14 19:24:39.207 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 661 ms
+2022-05-14 19:24:39.207 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:30:11.896 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 8248 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:30:11.898 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:30:12.715 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:30:12.720 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:30:12.721 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:30:12.721 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:30:12.816 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:30:12.816 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 876 ms
+2022-05-14 19:30:13.130 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:30:13.741 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:30:13.758 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:30:13.764 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.245 seconds (JVM running for 2.834)
+2022-05-14 19:30:17.630 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:30:17.630 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:30:17.631 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:30:17.653 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:30:17.653 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:30:17.654 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:30:17.655 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:30:17.655 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:30:17.680 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","081l6a0w3zg4vY2PmU0w39twBb3l6a0E",null,null]
+2022-05-14 19:30:18.078 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_vdbWV-jQfe4fhZTr3SlhzhlBjnI8R2HVfe1DKVHSLXu251ILokdN-YRdzDhEOowmvSQ0p6IiCcm6aRZR84n3ZZmrBk1_eNHDfft1qy6leTaCx--VbgfE5tvlxLUigIR-KjMuBj5D0DVUbcbzLCKhAAAEVD","expires_in":7200}
+2022-05-14 19:30:18.237 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"4D9497B99AAD5BA540DA2AFC478193F6\",\"sessionKey\":\"vsBv+jllneQUYQPliAOiZQ==\"}"
+2022-05-14 19:30:18.237 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 584 ms
+2022-05-14 19:30:18.237 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:30:19.851 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:30:19.852 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:30:19.852 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:30:19.852 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:30:19.853 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"wx.getStorageSync('sessionId')"}
+2022-05-14 19:30:19.856 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:30:19.856 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:32:16.723 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 596 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:32:16.727 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:32:17.545 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:32:17.551 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:32:17.551 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:32:17.551 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:32:17.675 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:32:17.675 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 913 ms
+2022-05-14 19:32:18.046 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:32:18.668 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:32:18.686 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:32:18.692 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 2.357 seconds (JVM running for 2.946)
+2022-05-14 19:32:23.398 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:32:23.398 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:32:23.399 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-05-14 19:32:23.419 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:32:23.420 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:32:23.421 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:32:23.422 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:32:23.422 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:32:23.451 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","021Q4Gll25dy994B7eol2qMeJ50Q4Gl9",null,null]
+2022-05-14 19:32:23.840 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_asQKSHWYi5d-qH0O99O0mu8edia3YNnY6x8iWQxsVwuRhIt3BxqefhdCYDK7-IXqlxBqLYenxw7viwrbP1-TSknNKkAWBL7Y9l251a4oOvijPGq96ocCphW4Y6X136F86O1wr_Mzij8aM9gKXDKdAHALRY","expires_in":7200}
+2022-05-14 19:32:24.018 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"BFE92C6B2AD1F98717A61B94A0C131C6\",\"sessionKey\":\"a/czRbQfb7zWFzOd6KumUQ==\"}"
+2022-05-14 19:32:24.018 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 599 ms
+2022-05-14 19:32:24.018 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:32:25.509 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:32:25.509 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:32:25.509 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:32:25.509 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:32:25.510 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"wx.getStorageSync('sessionId')"}
+2022-05-14 19:32:25.512 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:32:25.512 [http-nio-8080-exec-2] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:36:20.693 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Starting MiniprogramApplication using Java 15.0.1 on DESKTOP-UGOTPMI with PID 17508 (D:\miniprogram\target\classes started by 17483 in D:\miniprogram)
+2022-05-14 19:36:20.697 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-14 19:36:22.182 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-05-14 19:36:22.190 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:36:22.191 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-05-14 19:36:22.191 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-14 19:36:22.329 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-05-14 19:36:22.329 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1577 ms
+2022-05-14 19:36:22.782 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-05-14 19:36:23.620 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-14 19:36:23.637 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-14 19:36:23.644 [main] INFO  com.hebeu.miniprogram.MiniprogramApplication - Started MiniprogramApplication in 3.626 seconds (JVM running for 5.058)
+2022-05-14 19:36:24.165 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-14 19:36:24.165 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-05-14 19:36:24.166 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-05-14 19:36:24.195 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:36:24.196 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:36:24.196 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:36:24.197 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:36:24.198 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:36:24.223 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","071VCv000NouPN1I3O300H0Za61VCv0u",null,null]
+2022-05-14 19:36:24.655 [http-nio-8080-exec-1] INFO  cn.binarywang.wx.miniapp.api.impl.BaseWxMaServiceImpl - resultContent: {"access_token":"56_BgBR5FA7QUjVU1p6BxFqqeb_2nlHAYGWSoigRVatiRKDSlpgd43HkcReCIHRbMYNsdM4ugBClBFc6xzHArX3MgutDEW9xKojLsXP3VSz5JM0scua2QZ3cAEdKXPlXYm6BMw0Nkbtshjz2IfyTCQgAJAFOC","expires_in":7200}
+2022-05-14 19:36:24.797 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"F593FD8E339157FFB2FD1FCC4547BCA2\",\"sessionKey\":\"Pkt1v/9EgmIDkP7jJVEDvA==\"}"
+2022-05-14 19:36:24.797 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 602 ms
+2022-05-14 19:36:24.797 [http-nio-8080-exec-1] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/login
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.login
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:08.528 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["wxe1b4b37726e7ec84","061ShyFa1lGuaD0sS2Ga1yogMo2ShyF3",null,null]
+2022-05-14 19:43:08.816 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "{\"openId\":\"o0V__5UtWtthNEPDoOqy1JzWKwtQ\",\"sessionId\":\"49C3B9B36401F6DF23730AA5A5755101\",\"sessionKey\":\"7JxU+fmzzU/dOH1p5Lu1rw==\"}"
+2022-05-14 19:43:08.816 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 288 ms
+2022-05-14 19:43:08.816 [http-nio-8080-exec-3] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:43:16.087 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:16.087 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/49C3B9B36401F6DF23730AA5A5755101/logout
+2022-05-14 19:43:16.087 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:16.087 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:16.088 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"49C3B9B36401F6DF23730AA5A5755101"}
+2022-05-14 19:43:16.089 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/49C3B9B36401F6DF23730AA5A5755101/logout
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Class Method   : com.hebeu.miniprogram.controller.UserInfoController.logout
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args   : ["49C3B9B36401F6DF23730AA5A5755101",null,null]
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response Args  : "LOG_OUT_SUCCESS"
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Time-Consuming : 1 ms
+2022-05-14 19:43:16.090 [http-nio-8080-exec-4] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:43:25.949 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:25.949 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/49C3B9B36401F6DF23730AA5A5755101/logout
+2022-05-14 19:43:25.949 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:25.949 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:25.949 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"49C3B9B36401F6DF23730AA5A5755101"}
+2022-05-14 19:43:25.951 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:43:25.951 [http-nio-8080-exec-5] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/49C3B9B36401F6DF23730AA5A5755101/logout
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"49C3B9B36401F6DF23730AA5A5755101"}
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:43:29.299 [http-nio-8080-exec-6] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/49C3B9B36401F6DF23730AA5A5755101/logout
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"49C3B9B36401F6DF23730AA5A5755101"}
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:43:58.497 [http-nio-8080-exec-7] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - ========================================== Start ==========================================
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - URL            : http://127.0.0.1:8080/user/wx.getStorageSync('sessionId')/get_now_user_info
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - HTTP Method    : GET
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - IP             : 127.0.0.1
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Request Args  : {"sessionId":"wx.getStorageSync('sessionId')"}
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - Response       : {"errorCode":401,"errorInfo":"PERMISSION DENIED, PLEASE LOGIN FIRST"}
+2022-05-14 19:44:00.757 [http-nio-8080-exec-10] INFO  com.hebeu.miniprogram.aop.WebLogAspect - =========================================== End ===========================================
+

@@ -2,8 +2,11 @@ package com.hebeu.miniprogram.security;
 
 import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSON;
+import com.hebeu.miniprogram.aop.WebLogAspect;
 import com.hebeu.miniprogram.entity.ErrorInfo;
 import com.hebeu.miniprogram.status.StatusCode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -20,27 +23,52 @@ import java.util.Map;
 @Configuration
 public class WebSessionInterceptor implements HandlerInterceptor {
 
+    private final static Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
+    private static final String LINE_SEPARATOR = System.lineSeparator();
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Map restParam = (Map) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
+        printLogBefore(request, response, restParam);
         WebSessionContext webSessionContext = WebSessionContext.getInstance();
         if (webSessionContext.getSession((String) restParam.get("sessionId")) == null) {
-            needLoginResponse(response);
+            needLoginResponse(request, response);
             return false;
         } else {
             return true;
         }
     }
 
-    private void needLoginResponse(HttpServletResponse response) {
+
+    private void printLogBefore(HttpServletRequest request, HttpServletResponse response, Map restParam) {
+        // 打印请求相关参数
+        logger.info("========================================== Start ==========================================");
+        // 打印请求 url
+        logger.info("URL            : {}", request.getRequestURL().toString());
+        // 打印 Http method
+        logger.info("HTTP Method    : {}", request.getMethod());
+        // 打印请求的 IP
+        logger.info("IP             : {}", request.getRemoteAddr());
+        // 打印请求入参
+        logger.info("Request Args  : {}", JSON.toJSONString(restParam));
+    }
+
+    private void needLoginResponse(HttpServletRequest request, HttpServletResponse response) {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
         try {
-            response.getWriter().print(JSON.toJSONString(new ErrorInfo(StatusCode.NEED_LOGIN, "PERMISSION DENIED, PLEASE LOGIN FIRST")));
+            ErrorInfo errorInfo = new ErrorInfo(StatusCode.NEED_LOGIN, "PERMISSION DENIED, PLEASE LOGIN FIRST");
+            response.getWriter().print(JSON.toJSONString(errorInfo));
+            printLogAfter(request, response, errorInfo);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void printLogAfter(HttpServletRequest request, HttpServletResponse response, Object object) {
+        logger.info("Response       : {}", JSON.toJSONString(object));
+        logger.info("=========================================== End ===========================================" + LINE_SEPARATOR);
+
     }
 
     @Override
