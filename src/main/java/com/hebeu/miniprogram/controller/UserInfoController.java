@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON;
 import com.hebeu.miniprogram.config.WxMaConfiguration;
 import com.hebeu.miniprogram.entity.LoginInfo;
 import com.hebeu.miniprogram.entity.UserInfo;
+import com.hebeu.miniprogram.security.UserSessionKeyContext;
 import com.hebeu.miniprogram.security.WebSessionContext;
 import com.hebeu.miniprogram.service.UserInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
@@ -49,11 +50,16 @@ public class UserInfoController {
         final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
+            //把信息都存到后端整个的session中
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("openId", session.getOpenid());
+            httpSession.setAttribute("unionId", session.getUnionid());
+            httpSession.setAttribute("sessionKey", session.getSessionKey());
+            //返回登录信息
             LoginInfo loginInfo = new LoginInfo();
             loginInfo.setOpenId(session.getOpenid());
             loginInfo.setUnionId(session.getUnionid());
-            loginInfo.setSessionKey(session.getSessionKey());
-            loginInfo.setSessionId(request.getSession().getId());
+            loginInfo.setSessionId(httpSession.getId());
             return JSON.toJSONString(loginInfo);
         } catch (WxErrorException e) {
             this.logger.error(e.getMessage(), e);
@@ -62,15 +68,14 @@ public class UserInfoController {
     }
 
     @GetMapping("/{sessionId}/logout")
-    public String logout(@PathVariable String sessionId,HttpServletRequest request, HttpServletResponse response){
-        WebSessionContext webSessionContext=WebSessionContext.getInstance();
+    public String logout(@PathVariable String sessionId, HttpServletRequest request, HttpServletResponse response) {
+        WebSessionContext webSessionContext = WebSessionContext.getInstance();
         HttpSession session = webSessionContext.getSession(sessionId);
-        if (session!=null){
+        if (session != null) {
             session.invalidate();
             webSessionContext.delSession(session);
             return ServiceStatus.LOG_OUT_SUCCESS;
-        }
-        else
+        } else
             return ServiceStatus.ALREADY_LOG_OUT;
     }
 
@@ -120,8 +125,11 @@ public class UserInfoController {
      * 获取当前手机已经登陆的用户信息接口
      */
     @GetMapping("/{sessionId}/get_now_user_info")
-    public String info(String appId, String openId, String userType, String sessionKey,
-                       String signature, String rawData, String encryptedData, String iv) {
+    public String info(String appId, String openId, String userType, String signature, String rawData, String encryptedData, String iv, @PathVariable String sessionId) {
+        //从session中拿该session的sessionKey信息
+        WebSessionContext webSessionContext = WebSessionContext.getInstance();
+        HttpSession session = webSessionContext.getSession(sessionId);
+        String sessionKey= (String) session.getAttribute("sessionKey");
         UserInfo findUserInfo = userInfoService.searchUserByOpenId(openId);
         if (findUserInfo != null) {
             //是否为新用户

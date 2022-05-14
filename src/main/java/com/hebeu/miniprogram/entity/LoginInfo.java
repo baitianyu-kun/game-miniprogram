@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 public class LoginInfo {
 
-    private String sessionKey;
 
     private String openId;
 
