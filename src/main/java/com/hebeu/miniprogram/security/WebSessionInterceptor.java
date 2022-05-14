@@ -31,7 +31,7 @@ public class WebSessionInterceptor implements HandlerInterceptor {
         Map restParam = (Map) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
         printLogBefore(request, response, restParam);
         WebSessionContext webSessionContext = WebSessionContext.getInstance();
-        if (webSessionContext.getSession((String) restParam.get("sessionId")) == null) {
+        if (restParam==null||webSessionContext.getSession((String) restParam.get("sessionId")) == null) {
             needLoginResponse(request, response);
             return false;
         } else {
@@ -41,6 +41,7 @@ public class WebSessionInterceptor implements HandlerInterceptor {
 
 
     private void printLogBefore(HttpServletRequest request, HttpServletResponse response, Map restParam) {
+
         // 打印请求相关参数
         logger.info("========================================== Start ==========================================");
         // 打印请求 url
@@ -50,7 +51,11 @@ public class WebSessionInterceptor implements HandlerInterceptor {
         // 打印请求的 IP
         logger.info("IP             : {}", request.getRemoteAddr());
         // 打印请求入参
-        logger.info("Request Args  : {}", JSON.toJSONString(restParam));
+        String requestArgs = "";
+        if (restParam != null) {
+            requestArgs = JSON.toJSONString(restParam);
+        }
+        logger.info("Request Args  : {}", requestArgs);
     }
 
     private void needLoginResponse(HttpServletRequest request, HttpServletResponse response) {
