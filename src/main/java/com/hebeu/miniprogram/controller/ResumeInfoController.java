@@ -30,7 +30,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @RestController
-@RequestMapping("/{appId}/{openId}/{userId}/resume")
+@RequestMapping("/{sessionId}/{userId}/resume")
 public class ResumeInfoController {
 
     @Autowired

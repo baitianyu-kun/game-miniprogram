@@ -51,4 +51,6 @@ public class ServiceStatus {
     public final static String UPDATE_RESUME_INFO_FAILED = "UPDATE_RESUME_INFO_FAILED";
     public final static String GET_USER_BY_USER_ID_FAILED="GET_USER_BY_USER_ID_FAILED";
     public final static String GET_USER_TYPE_FAILED="GET_USER_TYPE_FAILED";
+    public final static String ALREADY_LOG_OUT="ALREADY_LOG_OUT";
+    public final static String LOG_OUT_SUCCESS="LOG_OUT_SUCCESS";
 }

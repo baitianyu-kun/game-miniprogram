@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/{appId}/{openId}/{userId}/expect")
+@RequestMapping("/{sessionId}/{userId}/expect")
 public class ExpectedJobInfoController {
 
     @Autowired

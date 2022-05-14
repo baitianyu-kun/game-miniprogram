@@ -14,7 +14,7 @@ import javax.print.DocFlavor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/{appId}/{openId}/{userId}/recruit")
+@RequestMapping("/{sessionId}/{userId}/recruit")
 public class RecruitInfoController {
 
     @Autowired

@@ -7,7 +7,10 @@ import cn.binarywang.wx.miniapp.bean.WxMaUserInfo;
 import com.alibaba.fastjson.JSON;
 import com.hebeu.miniprogram.aop.WebLog;
 import com.hebeu.miniprogram.config.WxMaConfiguration;
+import com.hebeu.miniprogram.entity.LoginInfo;
 import com.hebeu.miniprogram.entity.UserInfo;
+import com.hebeu.miniprogram.security.WebSessionContext;
+import com.hebeu.miniprogram.security.WebSessionListener;
 import com.hebeu.miniprogram.service.UserInfoService;
 import com.hebeu.miniprogram.status.ServiceStatus;
 import com.hebeu.miniprogram.utils.JsonUtils;
@@ -22,8 +25,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 @RestController
-@RequestMapping("/{appId}/user")
+@RequestMapping("/user")
 public class UserInfoController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -38,27 +45,51 @@ public class UserInfoController {
      * 登录接口
      */
     @GetMapping("/login")
-    public String login(@PathVariable String appId, String code) {
+    public String login(String appId, String code, HttpServletRequest request, HttpServletResponse response) {
         if (StringUtils.isBlank(code)) {
             return "empty jscode";
         }
         final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
-            return JSON.toJSONString(session);
+            LoginInfo loginInfo = new LoginInfo();
+            loginInfo.setOpenid(session.getOpenid());
+            loginInfo.setUnionid(session.getUnionid());
+            loginInfo.setSessionKey(session.getSessionKey());
+            loginInfo.setSessionId(request.getSession().getId());
+            return JSON.toJSONString(loginInfo);
         } catch (WxErrorException e) {
             this.logger.error(e.getMessage(), e);
             return e.toString();
         }
     }
 
+    @GetMapping("/{sessionId}/logout")
+    public String logout(@PathVariable String sessionId,HttpServletRequest request, HttpServletResponse response){
+        WebSessionContext webSessionContext=WebSessionContext.getInstance();
+        HttpSession session = webSessionContext.getSession(sessionId);
+        if (session!=null){
+            session.invalidate();
+            webSessionContext.delSession(session);
+            return ServiceStatus.LOG_OUT_SUCCESS;
+        }
+        else
+            return ServiceStatus.ALREADY_LOG_OUT;
+    }
+
+    @GetMapping("/login2")
+    public String login2(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession httpSession = request.getSession();
+        return String.valueOf(httpSession.getId());
+    }
+
     /**
-     *根据用户id获取用户信息
+     * 根据用户id获取用户信息
      */
-    @GetMapping("/get_user_by_id")
-    public String getUserByUserId(int userId){
+    @GetMapping("/{sessionId}/get_user_by_id")
+    public String getUserByUserId(int userId) {
         UserInfo userByUserId = userInfoService.getUserByUserId(userId);
-        if (userByUserId!=null)
+        if (userByUserId != null)
             return JSON.toJSONString(userByUserId);
         else
             return ServiceStatus.GET_USER_BY_USER_ID_FAILED;
@@ -67,7 +98,7 @@ public class UserInfoController {
     /**
      * 用户注销接口
      */
-    @GetMapping("/delete")
+    @GetMapping("/{sessionId}/delete")
     public String delete(int userId) {
         if (userInfoService.deleteUser(userId) != 0) {
             return ServiceStatus.USER_DELETED_SUCCESS;
@@ -77,12 +108,12 @@ public class UserInfoController {
     }
 
     /**
-     *获取用户类型，具体类型在Type.class中
+     * 获取用户类型，具体类型在Type.class中
      */
-    @GetMapping("/get_user_type")
-    public String getUserType(int userId){
+    @GetMapping("/{sessionId}/get_user_type")
+    public String getUserType(int userId) {
         String userTypeByUserId = userInfoService.getUserTypeByUserId(userId);
-        if (userTypeByUserId!=null)
+        if (userTypeByUserId != null)
             return userTypeByUserId;
         else
             return ServiceStatus.GET_USER_TYPE_FAILED;
@@ -91,8 +122,8 @@ public class UserInfoController {
     /**
      * 获取当前手机已经登陆的用户信息接口
      */
-    @GetMapping("/get_now_user_info")
-    public String info(@PathVariable String appId, String openid, String userType, String sessionKey,
+    @GetMapping("/{sessionId}/get_now_user_info")
+    public String info(String appId, String openid, String userType, String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
         UserInfo findUserInfo = userInfoService.searchUserByOpenId(openid);
         if (findUserInfo != null) {
@@ -118,7 +149,7 @@ public class UserInfoController {
             newUserInfo.setNickName(tempUserInfo.getNickName());
             newUserInfo.setUserType(userType);
             newUserInfo.setProvince(tempUserInfo.getProvince());
-            if (userInfoService.insertUser(newUserInfo)!=0)
+            if (userInfoService.insertUser(newUserInfo) != 0)
                 return JSON.toJSONString(newUserInfo);
             else
                 return ServiceStatus.USER_INSERT_FAILED;
@@ -128,7 +159,7 @@ public class UserInfoController {
     /**
      * 用户添加手机号
      */
-    @GetMapping("/get_phone")
+    @GetMapping("/{sessionId}/get_phone")
     public String getUserPhone(int userId, String phoneNumber) {
         if (userInfoService.insertUserPhone(userId, phoneNumber) != 0) {
             return ServiceStatus.UPDATE_PHONE_SUCCESS;
@@ -141,8 +172,8 @@ public class UserInfoController {
     /**
      * 获取用户绑定手机号信息
      */
-    @GetMapping("/phone")
-    public String phone(@PathVariable String appId, String sessionKey, String signature,
+    @GetMapping("/{sessionId}/phone")
+    public String phone(String appId, String sessionKey, String signature,
                         String rawData, String encryptedData, String iv) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         // 用户信息校验
@@ -157,8 +188,8 @@ public class UserInfoController {
     /**
      * 新的获取方式，但是仅针对已经认证过的用户
      */
-    @GetMapping("/new_phone")
-    public String newphone(@PathVariable String appId, String code) {
+    @GetMapping("/{sessionId}/new_phone")
+    public String newphone(String appId, String code) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appId);
         try {
             return JsonUtils.toJson(wxService.getUserService().getNewPhoneNoInfo(code));
